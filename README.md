@@ -131,7 +131,7 @@ This pattern is useful if you want:
 This repo is a synthesis of a few strong ideas:
 - **agent-kernel** — the small-markdown-kernel pattern
   - https://agent-kernel.dev/
-  - https://github.com/oguzbilgic/agent-kernel
+  - https://github.com/oguzbilgic/agent-kernel (h/t https://github.com/tobi/agent-kernel)
 - **Andrej Karpathy's LLM Wiki note** — the raw-vs-compiled knowledge framing
   - https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
 - **OpenClaw dreaming** — the reflection / consolidation pattern
