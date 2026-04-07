@@ -1,8 +1,17 @@
 # Agent kernel
 
-A small, agent-maintained markdown workspace for durable context.
+A small markdown workspace that helps an agent accumulate durable context over time.
 
-This repository is a **public reference template** for people who want an agent to keep useful state in files without building a whole memory platform around it.
+This repository is a public reference template for people who want simple, inspectable files instead of a heavy memory framework.
+
+## At a glance
+
+- `notes/` = daily staging
+- `knowledge/` = durable understanding
+- `raw/` = source material
+- `outputs/` = reusable generated artifacts
+
+The agent maintains the workspace. Humans can browse it, but they do not need to manually maintain it for it to be useful.
 
 ## The idea
 
@@ -11,8 +20,6 @@ Use a few simple files and directories to separate:
 - **durable knowledge**
 - **raw source material**
 - **reusable outputs**
-
-The agent maintains the workspace over time. Humans can inspect it, browse it, and edit it if they want, but they do not need to manually maintain the system for it to be useful.
 
 ## Structure
 
@@ -85,6 +92,14 @@ If a good answer is likely to matter again, file it.
 - Promote only durable conclusions out of working notes.
 - Treat this as a companion workspace, not a giant universal memory system.
 
+## Quick start
+
+1. Customize `IDENTITY.md`.
+2. Customize `AGENTS.md`.
+3. Edit `SCHEMA.md` to reflect your boundaries.
+4. Rename the example files in `knowledge/`.
+5. Start using `notes/`, `raw/`, and `outputs/` only when real material appears.
+
 ## Recommended workflow
 
 1. Add source material to `raw/` when needed.
@@ -124,15 +139,6 @@ This repo is a synthesis of a few strong ideas:
   - https://docs.openclaw.ai/concepts/memory-dreaming
 
 More detail lives in [`REFERENCES.md`](./REFERENCES.md).
-
-## Adapting this repo
-
-A good way to start:
-1. customize `IDENTITY.md`
-2. customize `AGENTS.md`
-3. edit `SCHEMA.md` to reflect your actual boundaries
-4. rename the example files in `knowledge/`
-5. start using `notes/`, `raw/`, and `outputs/` only when real material appears
 
 ## License / usage
 
