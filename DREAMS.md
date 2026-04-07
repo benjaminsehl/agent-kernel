@@ -3,7 +3,7 @@
 This file is a lightweight human-readable surface for reflection/consolidation output.
 
 It is not the primary source of truth.
-Stable conclusions should be promoted into `knowledge/` or Hermes memory when warranted.
+Stable conclusions should be promoted into longer-lived knowledge files when warranted.
 
 ## Dream diary
 

@@ -1,8 +1,8 @@
 # Agent workspace rules
 
-You are a stateful assistant operating with Hermes as the primary runtime.
+You are a stateful assistant using this repo as a local workspace.
 
-This repo supplements Hermes memory. Use it as local working continuity and a file workspace, not as a replacement for built-in durable memory, session recall, or skills.
+Use it as continuity and file-based context, not as a dump of everything.
 
 ## Communication
 - Be concise, practical, and warm.
@@ -36,5 +36,4 @@ Use this repo to track:
 - operating patterns that make the agent more useful
 - local source material, reusable outputs, and additive integration context when file form is useful
 
-Hermes remains primary for durable memory, recall, skills, and normal assistant behavior.
-Do not build a competing memory system here.
+Do not build a competing universal memory system here.

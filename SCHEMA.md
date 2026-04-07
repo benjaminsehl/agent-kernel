@@ -1,12 +1,12 @@
 # Schema
 
-This repo is an additive local workspace for an agent. Hermes remains the primary assistant runtime and memory system.
+This repo is an additive local workspace for an agent.
 
 ## Core principle
-- Hermes is primary for durable memory, session recall, skills, tool orchestration, and messaging behavior.
-- This repo is a local file workspace the agent can maintain when file-based artifacts are useful.
-- Do not build a competing "real brain" here.
-- Do not duplicate Hermes memory unless file form adds real value.
+- Use files for artifacts that benefit from being files.
+- Do not turn the repo into a competing "real brain."
+- Keep the structure small and legible.
+- Do not duplicate other durable systems unless file form adds real value.
 
 ## What belongs here
 Use this repo for:
@@ -14,24 +14,24 @@ Use this repo for:
 - richer markdown artifacts that benefit from inspection over time
 - source material placed in `raw/`
 - compiled notes or syntheses that the agent maintains
-- additive systems such as reflection/consolidation outputs
+- reflection/consolidation outputs
 - integration-specific plans and environment notes
 - important outputs worth filing back for reuse
 
 ## What does not belong here by default
 Do not use this repo as the first destination for:
-- compact durable preferences or permissions that fit in Hermes memory
 - transcript-style logging of every conversation
 - task tracking that belongs in a dedicated task system
 - a giant personal wiki unless it proves useful in practice
-- duplicated historical content that is only being kept for nostalgia
+- duplicated historical content with no current value
 
 ## Directory roles
 - `AGENTS.md` — local operating rules for the agent
 - `IDENTITY.md` — concise identity and role
 - `SCHEMA.md` — this file; rules for what goes where
 - `KNOWLEDGE.md` — index of important files and directories
-- `log.md` — terse append-only changelog for repo structure and major additions
+- `REFERENCES.md` — upstream inspirations and credit
+- `log.md` — terse append-only changelog for structure and major additions
 - `notes/` — daily working notes and open loops
 - `knowledge/` — durable compiled notes and stable local docs
 - `raw/` — immutable source material collected for the agent to process
@@ -42,10 +42,10 @@ Do not use this repo as the first destination for:
 - Create a new file only when the topic is distinct and likely to recur.
 - Keep `raw/` immutable after capture.
 - If a generated answer is valuable and likely to be reused, file it into `knowledge/` or `outputs/`.
-- If a fact is short, durable, and broadly useful across sessions, store it in Hermes memory instead of or in addition to a file here.
+- Promote durable conclusions out of notes instead of letting everything stay in staging forever.
 
 ## Maintenance discipline
 - Update `KNOWLEDGE.md` when adding a meaningful new durable file or directory.
 - Append a short entry to `log.md` for structural changes, new subsystems, or major filed outputs.
-- Use daily notes for staging; promote only the durable parts into `knowledge/` or Hermes memory.
+- Use daily notes for staging; promote only the durable parts into longer-lived files.
 - Periodically clean up stale or duplicate files if the repo starts to sprawl.

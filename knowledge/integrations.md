@@ -1,6 +1,6 @@
 # Integrations
 
-Notes about additive local integrations that extend Hermes without replacing its core model.
+Notes about additive local integrations that extend the agent's environment without replacing its core runtime.
 
 Good examples:
 - local messaging backends
