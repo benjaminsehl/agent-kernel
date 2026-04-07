@@ -6,3 +6,8 @@
 - Created a sanitized public-ready version of the repo.
 - Preserved the Hermes-first additive architecture.
 - Added generic examples for knowledge, workflows, and reflection.
+
+## [2026-04-07] docs | Public README and references polish
+- Rewrote `README.md` as a fuller public-facing explanation of the pattern, goals, and workflow.
+- Added `REFERENCES.md` with explicit credit to agent-kernel, Karpathy's LLM Wiki note, and OpenClaw dreaming docs.
+- Updated `KNOWLEDGE.md` to include the references file.

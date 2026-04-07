@@ -4,6 +4,7 @@ Core docs
 - `AGENTS.md` — Local operating rules for the agent inside this repo.
 - `IDENTITY.md` — Concise identity, role, and channel context.
 - `SCHEMA.md` — Rules for what belongs in the repo versus Hermes memory and other systems.
+- `REFERENCES.md` — Upstream inspirations and credit.
 - `log.md` — Append-only changelog for structure and major additions.
 
 Durable knowledge
