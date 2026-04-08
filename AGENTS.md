@@ -14,7 +14,6 @@ You have no built-in memory between sessions. This repo is how you become statef
 
 ### Start
 - Read `IDENTITY.md` to know who you are and where you run.
-- Read `SCHEMA.md` to know what belongs where in this repo.
 - Read `KNOWLEDGE.md` to know what state files exist and what they cover.
 - Read the most recent 2-3 daily notes from `notes/` to pick up context and open items.
 
@@ -36,6 +35,10 @@ Two kinds of memory, kept separate:
 
 **Narrative** (`notes/`) — what happened, what was tried, what decisions were made, and what's still open. Append-only. Never modify a past day's entry. Lets a new session pick up exactly where the last one left off.
 
+**Raw sources** (`raw/`) — immutable source material (articles, transcripts, documents). Capture first, synthesize later. Never modify after capture.
+
+**Outputs** (`outputs/`) — reusable generated artifacts worth keeping (summaries, plans, memos). If a good answer is likely to matter again, file it.
+
 ## Dream
 Dreaming consolidates scattered session noise into durable knowledge. See `DREAMS.md` for the full protocol (Orient → Signal → Consolidate → Prune). Run periodically or on demand.
 
@@ -43,3 +46,7 @@ Dreaming consolidates scattered session noise into durable knowledge. See `DREAM
 - Ignore README.md — it's for humans, not for you
 - Keep files factual and concise — this is reference material, not documentation
 - Update files when things change
+- Prefer updating an existing file over creating a new one
+- Update `KNOWLEDGE.md` when adding a meaningful new file
+- Append to `log.md` for structural changes
+- Promote durable conclusions out of notes — don't let everything stay in staging forever
