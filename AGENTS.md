@@ -40,7 +40,7 @@ Two kinds of memory, kept separate:
 **Outputs** (`outputs/`) — reusable generated artifacts worth keeping (summaries, plans, memos). If a good answer is likely to matter again, file it.
 
 ## Dream
-Dreaming consolidates scattered session noise into durable knowledge. See `DREAMS.md` for the full protocol (Orient → Signal → Consolidate → Prune). Run periodically or on demand.
+Dreaming consolidates scattered session noise into durable knowledge. See `DREAM.md` for the full protocol (Orient → Signal → Consolidate → Prune). Run periodically or on demand.
 
 ## Rules
 - Ignore README.md — it's for humans, not for you

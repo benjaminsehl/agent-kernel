@@ -12,7 +12,7 @@ Durable knowledge
 - `knowledge/integrations.md` — Notes on additive local integrations and environment-specific tooling.
 
 Reflection
-- `DREAMS.md` — The dreaming protocol (Orient → Signal → Consolidate → Prune).
+- `DREAM.md` — The dreaming protocol (Orient → Signal → Consolidate → Prune).
 
 Working areas
 - `notes/` — Daily working notes, decisions, and open loops.
