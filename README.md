@@ -6,31 +6,14 @@ This repository is a public reference template for people who want simple, inspe
 
 ## At a glance
 
-- `notes/` = daily staging
-- `knowledge/` = durable understanding
-- `raw/` = source material
-- `outputs/` = reusable generated artifacts
-
 The agent maintains the workspace. Humans can browse it, but they do not need to manually maintain it for it to be useful.
 
-## The idea
-
-Use a few simple files and directories to separate:
-- **working notes**
-- **durable knowledge**
-- **raw source material**
-- **reusable outputs**
-
-## Structure
-
 ```text
-AGENTS.md          local operating rules for the agent
-IDENTITY.md        who the agent is / how it should behave
-SCHEMA.md          rules for what belongs here
+AGENTS.md          operating rules and memory structure for the agent
+IDENTITY.md        who the agent is and where it runs
 KNOWLEDGE.md       index of important files and directories
-REFERENCES.md      upstream inspirations and credit
+DREAM.md           the dreaming / consolidation protocol
 log.md             append-only changelog for structural updates
-DREAMS.md          human-readable reflection / consolidation surface
 
 knowledge/         durable compiled knowledge
 notes/             daily working notes and open loops
@@ -38,110 +21,44 @@ raw/               immutable source material
 outputs/           reusable generated artifacts
 ```
 
-## What each part is for
+## The kernel
 
-### `notes/`
-Daily narrative and staging.
+The core pattern comes from [agent-kernel](https://github.com/tobi/agent-kernel) (h/t [oguzbilgic/agent-kernel](https://github.com/oguzbilgic/agent-kernel)). A few markdown files make an agent stateful:
 
-Use this for:
-- what happened
-- what was decided
-- what is still open
+- **`AGENTS.md`** — the agent reads this to know how to operate. Session protocol, memory structure, rules.
+- **`IDENTITY.md`** — who the agent is, where it runs, what it does. Customized by the human.
+- **`KNOWLEDGE.md`** — index of everything in the knowledge layer. The agent's table of contents for cold starts.
 
-These notes are useful, but they are not automatically durable truth.
+The agent has no built-in memory between sessions. The repo is how it becomes stateful — read to remember, write so the next session knows what happened.
 
-### `knowledge/`
-Compiled, durable understanding.
+## Memory structure
 
-Use this for:
-- shared constraints
-- person-specific context
-- workflows
-- operating rules
-- integration notes
+Two kinds of memory, kept separate:
 
-### `raw/`
-Source material the agent should process.
+- **State** (`knowledge/`) — facts about how things are right now. Mutable. Updated when reality changes.
+- **Narrative** (`notes/`) — what happened, what was tried, what's still open. Append-only. Never modify a past day's entry.
 
-Examples:
-- articles
-- transcripts
-- copied notes
-- screenshots
-- documents
+## Raw and compiled knowledge
 
-Rule: capture first, synthesize later.
+Inspired by [Andrej Karpathy's LLM Wiki](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) — the idea that LLMs should compile knowledge once into structured pages rather than re-derive it from raw sources each time.
 
-### `outputs/`
-Generated artifacts worth keeping.
+- **`raw/`** — immutable source material (articles, transcripts, documents). Capture first, synthesize later.
+- **`knowledge/`** — compiled, durable understanding. The wiki the agent maintains.
+- **`outputs/`** — reusable generated artifacts worth keeping (summaries, plans, memos).
 
-Examples:
-- summaries
-- plans
-- comparisons
-- decision memos
-- generated documents or slide markdown
+## Dreaming
 
-If a good answer is likely to matter again, file it.
+The reflection protocol in `DREAM.md` follows [tobi/agent-kernel](https://github.com/tobi/agent-kernel)'s four-phase model (Orient, Signal, Consolidate, Prune), with additional influence from [OpenClaw's dreaming](https://docs.openclaw.ai/concepts/dreaming) concept — background memory consolidation that moves short-term signals into durable long-term knowledge.
 
-## Working principles
-
-- Keep the structure small.
-- Prefer updating existing files over creating new ones.
-- Keep `raw/` immutable after capture.
-- Promote only durable conclusions out of working notes.
-- Treat this as a companion workspace, not a giant universal memory system.
+The point: not every signal deserves promotion into durable state. A reflection pass helps the agent decide what is actually worth keeping.
 
 ## Quick start
 
-1. Customize `IDENTITY.md`.
-2. Customize `AGENTS.md`.
-3. Edit `SCHEMA.md` to reflect your boundaries.
-4. Rename the example files in `knowledge/`.
-5. Start using `notes/`, `raw/`, and `outputs/` only when real material appears.
-
-## Recommended workflow
-
-1. Add source material to `raw/` when needed.
-2. Ask the agent to process or synthesize it.
-3. Let the agent update `knowledge/` or create something in `outputs/`.
-4. Use `notes/` for day-to-day staging.
-5. Periodically prune, merge, and promote so the repo stays legible.
-
-## Reflection / dreaming
-
-This template includes a lightweight reflection layer:
-- `DREAMS.md`
-- `knowledge/dreaming.md`
-- `knowledge/dreaming-runbook.md`
-
-The point is simple: not every short-term signal deserves promotion into durable state.
-A reflection pass helps the agent decide what is actually worth keeping.
-
-## Who this is for
-
-This pattern is useful if you want:
-- plain files instead of a heavy framework
-- a repo the agent can maintain over time
-- durable context that is inspectable and portable
-- a simple structure other people can copy and adapt
-
-## Inspirations
-
-This repo is a synthesis of a few strong ideas:
-- **agent-kernel** — the small-markdown-kernel pattern
-  - https://agent-kernel.dev/
-  - https://github.com/oguzbilgic/agent-kernel (h/t https://github.com/tobi/agent-kernel)
-- **Andrej Karpathy's LLM Wiki note** — the raw-vs-compiled knowledge framing
-  - https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
-- **OpenClaw dreaming** — the reflection / consolidation pattern
-  - https://docs.openclaw.ai/concepts/dreaming
-  - https://docs.openclaw.ai/concepts/memory-dreaming
-
-More detail lives in [`REFERENCES.md`](./REFERENCES.md).
+1. Customize `IDENTITY.md` — tell the agent who it is.
+2. Customize `AGENTS.md` — adjust communication style, rules, and boundaries.
+3. Start using `notes/`, `raw/`, and `outputs/` only when real material appears.
 
 ## License / usage
 
-Use this as a reference, template, or starting point.
-Adapt it freely.
+Use this as a reference, template, or starting point. Adapt it freely.
 If you publish your own version, please credit the upstream inspirations too.
